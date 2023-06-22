@@ -1,0 +1,1264 @@
+{
+  "meta": {
+    "copyright": "Copyright 2023 E.K. Solutions Pvt. Ltd.",
+    "site": "https://system.uat.ordering-kfc.ekbana.net",
+    "emails": [
+      "info@ekbana.com"
+    ],
+    "version": 1,
+    "appLayoutData": {
+      "appLayoutId": 4,
+      "appLayoutTitle": "KFC KATHMANDU DO NOT EDIT THIS LAYOUT"
+    }
+  },
+  "data": [
+    {
+      "id": 13,
+      "title": "banners"
+    },
+    {
+      "id": 29,
+      "title": "Large Banner",
+      "status": true,
+      "position": 1,
+      "details": [
+        {
+          "id": 2,
+          "title": "Large Banner",
+          "position": 2,
+          "webLink": null,
+          "linkTo": "none",
+          "itemId": null,
+          "status": true,
+          "description": null,
+          "startDate": "2023-03-21",
+          "endDate": "2023-03-24",
+          "images": "https://assets.uat.ordering-kfc.ekbana.net/storage/LargeBanner/641aac1eb6459.jpg"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Category",
+      "status": true,
+      "position": 2,
+      "sectionDetails": {
+        "id": "30",
+        "title": "EXPLORE MENU",
+        "designType": "square",
+        "autoScroll": false
+      },
+      "details": [],
+      "categories": [
+        {
+          "id": 5,
+          "name": "Extras",
+          "description": "",
+          "slug": "extras",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46eff29439.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994f76df49e.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 11,
+          "productCount": 3,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 94,
+          "name": "Krushers",
+          "description": "",
+          "slug": "krushers4036",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46e555de9a.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e366e920ba3.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 7,
+          "productCount": 2,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 99,
+          "name": "Rice Meals",
+          "description": "",
+          "slug": "rice-meals",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46daad56b4.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e36736587f1.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 5,
+          "productCount": 5,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 93,
+          "name": "Desserts",
+          "description": "",
+          "slug": "desserts",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46e740094f.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3675f038d2.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 9,
+          "productCount": 2,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 9,
+          "name": "Beverage",
+          "description": "",
+          "slug": "beverage",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46e9722f66.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994df04f90c.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 6,
+          "productCount": 12,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 6,
+          "name": "Fries",
+          "description": "",
+          "slug": "fries",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46eb909c74.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63982ef46e180.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 8,
+          "productCount": 5,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 7,
+          "name": "Popcorn",
+          "description": "",
+          "slug": "popcorn",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f16da527.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994dae9debb.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 12,
+          "productCount": 4,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 2,
+          "name": "Smoky Red",
+          "description": "",
+          "slug": "smoky-red",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f273760a.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994c701f015.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 3,
+          "productCount": 2,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 4,
+          "name": "Burger",
+          "description": "",
+          "slug": "burger",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f46c0a9a.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994d727ba31.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 4,
+          "productCount": 6,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 1,
+          "name": "Hot & Crispy",
+          "description": "",
+          "slug": "hc",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f45894830de.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994e2d3c2af.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 1,
+          "productCount": 3,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 100,
+          "name": "Snacks",
+          "description": "",
+          "slug": "snacks",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46de136522.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3659d2945b.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 6,
+          "productCount": 3,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 102,
+          "name": "Chicken Roll",
+          "description": "",
+          "slug": "chicken-roll",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/645a0df917951.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/646f05489babe.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 0,
+          "productCount": 2,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 97,
+          "name": "Chicken Buckets",
+          "description": "",
+          "slug": "chicken-buckets",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46d3792a30.png",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e365e722a7a.png",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 99,
+          "productCount": 6,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        },
+        {
+          "id": 101,
+          "name": "Payment Test",
+          "description": "",
+          "slug": "payment-test",
+          "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/config/image-config/placeholder-default/63c7833d79c44.jpg",
+          "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/config/image-config/category-image/63f44494c7a80.jpg",
+          "iconAltText": null,
+          "backgroundImageAltText": null,
+          "level": 1,
+          "position": 100,
+          "productCount": 1,
+          "avgRating": 0,
+          "ratingCount": 0,
+          "yourRating": null,
+          "status": true,
+          "visibility": true,
+          "isRestaurant": false,
+          "isRestaurantOpen": null,
+          "profile": null
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Products Collection",
+      "status": true,
+      "position": 5,
+      "sectionDetails": {
+        "id": "33",
+        "title": "KFC FAVOURITE MEALS",
+        "designType": "horizontal",
+        "collectionType": "multiple",
+        "description": null,
+        "startDate": "2023-01-09",
+        "endDate": "2023-01-10",
+        "products": [
+          {
+            "id": 439,
+            "name": "Hot & Crispy Rice Bowl",
+            "restaurantId": 99,
+            "restaurantName": "Rice Meals",
+            "restaurantSlug": "rice-meals",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46daad56b4.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e36736587f1.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46daad56b4.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e36736587f1.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K313",
+            "slug": "hot-crispy-rice-bowl",
+            "type": "Non Veg",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>Rice layered with spicy, exotic gravy &amp; topped off with 1pc Hot &amp; Crispy chicken</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 99,
+            "categoryName": "Rice Meals",
+            "categorySlug": "rice-meals",
+            "variants": [
+              {
+                "id": 439,
+                "title": "RIC002",
+                "sku": "K313",
+                "sellingPrice": 449,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 449,
+                "size": "Bowl",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "ric002",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1616,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d2635a6d10.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1616,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d2635a6d10.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 418,
+            "name": "Chizza",
+            "restaurantId": 100,
+            "restaurantName": "Snacks",
+            "restaurantSlug": "snacks",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46de136522.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3659d2945b.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46de136522.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3659d2945b.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K272",
+            "slug": "chizza",
+            "type": "Non Veg",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>Crunchy chicken topped with cheese, spicy sauce, veggies &amp; herbs. All-chicken-no-crust pizza!</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 100,
+            "categoryName": "Snacks",
+            "categorySlug": "snacks",
+            "variants": [
+              {
+                "id": 418,
+                "title": "CHI001",
+                "sku": "K272",
+                "sellingPrice": 649,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 649,
+                "size": "Plate",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "chi0015328",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1604,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c397c0c41d.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1604,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c397c0c41d.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 420,
+            "name": "Coffee Mouse Cake",
+            "restaurantId": 93,
+            "restaurantName": "Desserts",
+            "restaurantSlug": "desserts",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46e740094f.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3675f038d2.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46e740094f.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3675f038d2.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K497",
+            "slug": "coffee-mouse-cake",
+            "type": "None",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>Coffee, chocolate, cakeâ¦whats not to love? Enjoy this for coffee-licious temptations!</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 93,
+            "categoryName": "Desserts",
+            "categorySlug": "desserts",
+            "variants": [
+              {
+                "id": 420,
+                "title": "DES002",
+                "sku": "K497",
+                "sellingPrice": 299,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 299,
+                "size": "Plate",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "des002",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1596,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c384a41fe5.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1596,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c384a41fe5.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 414,
+            "name": "Hot & Crispy 8pcs",
+            "restaurantId": 97,
+            "restaurantName": "Chicken Buckets",
+            "restaurantSlug": "chicken-buckets",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46d3792a30.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e365e722a7a.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46d3792a30.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e365e722a7a.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K009",
+            "slug": "hot-crispy-8pcs",
+            "type": "Non Veg",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>8 pcs of signature Hot &amp; crispy chicken at a deal price</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 97,
+            "categoryName": "Chicken Buckets",
+            "categorySlug": "chicken-buckets",
+            "variants": [
+              {
+                "id": 414,
+                "title": "COB003",
+                "sku": "K009",
+                "sellingPrice": 1850,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 1850,
+                "size": "Bucket",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "cob003",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1626,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d28f474346.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1626,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d28f474346.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 435,
+            "name": "Medium Chicken Popcorn",
+            "restaurantId": 7,
+            "restaurantName": "Popcorn",
+            "restaurantSlug": "popcorn",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f16da527.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994dae9debb.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f16da527.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994dae9debb.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K137",
+            "slug": "medium-chicken-popcorn",
+            "type": "Non Veg",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>Signature bite-sized boneless chicken, with special spices</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 7,
+            "categoryName": "Popcorn",
+            "categorySlug": "popcorn",
+            "variants": [
+              {
+                "id": 435,
+                "title": "POP002",
+                "sku": "K137",
+                "sellingPrice": 425,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 425,
+                "size": "Bucket",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "pop002",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1613,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d25c444c69.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1613,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d25c444c69.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 407,
+            "name": "Classic Veg Krisper",
+            "restaurantId": 4,
+            "restaurantName": "Burger",
+            "restaurantSlug": "burger",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f46c0a9a.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994d727ba31.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f46c0a9a.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994d727ba31.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K492",
+            "slug": "classic-veg-krisper6080",
+            "type": "Veg",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>Value burger with a veg patty, lettuce and mayo</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 4,
+            "categoryName": "Burger",
+            "categorySlug": "burger",
+            "variants": [
+              {
+                "id": 407,
+                "title": "BUR002",
+                "sku": "K492",
+                "sellingPrice": 159,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 159,
+                "size": "Plate",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "bur002",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1628,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d316c07d86.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1628,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d316c07d86.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 406,
+            "name": "Classic Zinger",
+            "restaurantId": 4,
+            "restaurantName": "Burger",
+            "restaurantSlug": "burger",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f46c0a9a.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994d727ba31.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f46c0a9a.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994d727ba31.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K439",
+            "slug": "classic-zinger",
+            "type": "Non Veg",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>Signature burger made with a crunchy chicken fillet, veggies &amp; a delicious mayo sauce</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 4,
+            "categoryName": "Burger",
+            "categorySlug": "burger",
+            "variants": [
+              {
+                "id": 406,
+                "title": "BUR001",
+                "sku": "K439",
+                "sellingPrice": 399,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 399,
+                "size": "Plate",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "bur0012932",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1611,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d2564129ea.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1611,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641d2564129ea.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 419,
+            "name": "Choco Mud Pie",
+            "restaurantId": 93,
+            "restaurantName": "Desserts",
+            "restaurantSlug": "desserts",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46e740094f.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3675f038d2.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46e740094f.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3675f038d2.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K496",
+            "slug": "choco-mud-pie",
+            "type": "None",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>Chocolate lovers unite! Say hello to our creamy chocolate &amp; cake dessert- a must try!</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 93,
+            "categoryName": "Desserts",
+            "categorySlug": "desserts",
+            "variants": [
+              {
+                "id": 419,
+                "title": "DES001",
+                "sku": "K496",
+                "sellingPrice": 299,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 299,
+                "size": "Plate",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "des001",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1595,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c382c5058a.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1595,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c382c5058a.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 409,
+            "name": "Classic Chicken Krisper",
+            "restaurantId": 4,
+            "restaurantName": "Burger",
+            "restaurantSlug": "burger",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f46c0a9a.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994d727ba31.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f46c0a9a.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994d727ba31.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K490",
+            "slug": "classic-chicken-krisper1914",
+            "type": "Non Veg",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>Value burger with a chicken fillet, lettuce and mayo</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 4,
+            "categoryName": "Burger",
+            "categorySlug": "burger",
+            "variants": [
+              {
+                "id": 409,
+                "title": "BUR004",
+                "sku": "K490",
+                "sellingPrice": 225,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 225,
+                "size": "Plate",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "bur0046714",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1609,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c3b430aea4.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1609,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c3b430aea4.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 445,
+            "name": "3pc Peri Peri Strips",
+            "restaurantId": 100,
+            "restaurantName": "Snacks",
+            "restaurantSlug": "snacks",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46de136522.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3659d2945b.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46de136522.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e3659d2945b.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K684",
+            "slug": "3pc-peri-peri-strips",
+            "type": "Non Veg",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>3 Spicy Peri Peri chicken strips</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 100,
+            "categoryName": "Snacks",
+            "categorySlug": "snacks",
+            "variants": [
+              {
+                "id": 445,
+                "title": "SNK001",
+                "sku": "K684",
+                "sellingPrice": 1,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 1,
+                "size": "Piece",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "snk0016526",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1602,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c393a66cbd.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1602,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/641c393a66cbd.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          },
+          {
+            "id": 413,
+            "name": "Hot & Crispy 6pcs",
+            "restaurantId": 97,
+            "restaurantName": "Chicken Buckets",
+            "restaurantSlug": "chicken-buckets",
+            "hasRestaurant": false,
+            "categoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46d3792a30.png",
+            "categoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e365e722a7a.png",
+            "webpCategoryIcon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46d3792a30.webp",
+            "webpCategoryBackgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63e365e722a7a.png",
+            "categoryIconAltText": null,
+            "categoryBackgroundImageAltText": null,
+            "code": "K012",
+            "slug": "hot-crispy-6pcs",
+            "type": "Non Veg",
+            "status": true,
+            "decimalQuantity": false,
+            "taxable": true,
+            "barcode": null,
+            "hasOffer": false,
+            "description": "<p>6 pcs of signature Hot &amp; crispy chicken at a deal price</p>",
+            "brandID": "",
+            "brandName": "",
+            "brandSlug": "",
+            "categoryID": 97,
+            "categoryName": "Chicken Buckets",
+            "categorySlug": "chicken-buckets",
+            "variants": [
+              {
+                "id": 413,
+                "title": "COB002",
+                "sku": "K012",
+                "sellingPrice": 1450,
+                "markedPrice": 0,
+                "newPrice": 0,
+                "oldPrice": 1450,
+                "size": "Bucket",
+                "barcode": null,
+                "stock": 999,
+                "description": "",
+                "slug": "cob002",
+                "hasOffer": false,
+                "taxable": false,
+                "status": true
+              }
+            ],
+            "seo": {
+              "ogTitle": null,
+              "ogDescription": null,
+              "title": null
+            },
+            "tags": null,
+            "cuisines": null,
+            "ingredients": null,
+            "images": [
+              {
+                "id": 1477,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/63fc53eeaf0a9.png",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ],
+            "webpImages": [
+              {
+                "id": 1477,
+                "imageName": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/product/63fc53eeaf0a9.webp",
+                "unit_price_id": null,
+                "altText": null
+              }
+            ]
+          }
+        ]
+      },
+      "details": []
+    },
+    {
+      "id": 34,
+      "title": "Long Banner",
+      "status": true,
+      "position": 6,
+      "sectionDetails": {
+        "id": "34",
+        "title": "TOP DEALS"
+      },
+      "details": [
+        {
+          "id": 5,
+          "title": "long-banner 3",
+          "position": 1,
+          "webLink": null,
+          "linkTo": "product",
+          "itemId": 419,
+          "status": true,
+          "description": null,
+          "startDate": null,
+          "endDate": null,
+          "images": "https://assets.uat.ordering-kfc.ekbana.net/storage/LongBanner/64193bf8dbeb9.jpg"
+        },
+        {
+          "id": 1,
+          "title": "longbanner1",
+          "position": 2,
+          "webLink": null,
+          "linkTo": "category",
+          "itemId": 4,
+          "status": true,
+          "description": null,
+          "startDate": null,
+          "endDate": null,
+          "images": "https://assets.uat.ordering-kfc.ekbana.net/storage/LongBanner/638704e2434ef.jpg",
+          "category": {
+            "id": 4,
+            "parentId": null,
+            "name": "Burger",
+            "description": "",
+            "slug": "burger",
+            "icon": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63f46f46c0a9a.png",
+            "backgroundImage": "https://assets.uat.ordering-kfc.ekbana.net/storage/uploads/images/category/63994d727ba31.png",
+            "iconAltText": null,
+            "backgroundImageAltText": null,
+            "level": 1,
+            "productCount": 6,
+            "orderCount": 0,
+            "avgRating": 0,
+            "ratingCount": 0,
+            "yourRating": 0,
+            "status": true,
+            "visibility": true,
+            "isRestaurant": false,
+            "restaurantOpen": false,
+            "items": [],
+            "profile": null,
+            "subCategories": []
+          }
+        },
+        {
+          "id": 4,
+          "title": "Long banner -4",
+          "position": 3,
+          "webLink": "https://uat.ordering-kfc.ekbana.net/categories/burger",
+          "linkTo": "web_link",
+          "itemId": null,
+          "status": true,
+          "description": null,
+          "startDate": null,
+          "endDate": null,
+          "images": "https://assets.uat.ordering-kfc.ekbana.net/storage/LongBanner/63a1708f365bb.jpg"
+        },
+        {
+          "id": 2,
+          "title": "longbanner2",
+          "position": 4,
+          "webLink": null,
+          "linkTo": "none",
+          "itemId": null,
+          "status": true,
+          "description": null,
+          "startDate": null,
+          "endDate": null,
+          "images": "https://assets.uat.ordering-kfc.ekbana.net/storage/LongBanner/638704ed745d8.jpg"
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "title": "Category Collection",
+      "status": true,
+      "position": 11,
+      "sectionDetails": {
+        "id": "151",
+        "title": "test",
+        "designType": "vertical",
+        "description": "test",
+        "startDate": null,
+        "endDate": null,
+        "categories": []
+      },
+      "details": []
+    }
+  ]
+}
