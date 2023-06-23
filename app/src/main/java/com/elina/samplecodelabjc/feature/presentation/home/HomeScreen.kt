@@ -9,7 +9,9 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -22,6 +24,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -29,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
@@ -66,9 +70,6 @@ fun MYyHomeScreen(content: @Composable () -> Unit) {
 @Composable
 fun MyHomeItemsView(homeItemList: List<LandingPageNewHome>) {
     LazyColumn {
-        item {
-            Text(text = "Header", style = MaterialTheme.typography.h1)
-        }
         items(items = homeItemList) { item ->
             when (item.title) {
                 StringConstants.banner -> {
@@ -145,6 +146,7 @@ fun HorizontalProduct(product: Products?) {
 
 @Composable
 fun ProductCollection(sectionDetails: LandingPageSectionDetails?) {
+    val products = sectionDetails?.products
     val manrope = FontFamily(Font(R.font.manrope_bold))
     Text(
         text = sectionDetails?.title.toString(),
@@ -156,10 +158,8 @@ fun ProductCollection(sectionDetails: LandingPageSectionDetails?) {
         color = colorResource(id = R.color.color_dark),
         modifier = Modifier.padding(start = 16.dp)
     )
-    val products = sectionDetails?.products
     when (sectionDetails?.designType) {
         StringConstants.horizontalType -> {
-            //  ProductCollection(sectionDetails)
             LazyRow {
                 items(items = products!!) { product ->
                     HorizontalProduct(product)
@@ -167,19 +167,26 @@ fun ProductCollection(sectionDetails: LandingPageSectionDetails?) {
             }
         }
         StringConstants.gridType -> {
-            // GridProduct(sectionDetails)
+            GridProduct(sectionDetails)
         }
         StringConstants.verticalType -> {
-            Box(modifier = Modifier.padding(start = 16.dp)) {
-                LazyRow {
-                    items(items = products!!) { product ->
-                        VerticalProduct(product)
+            LazyColumn(modifier = Modifier.height(200.dp)) {
+                itemsIndexed(products!!){index, item ->
+                    var bottomPadding = 0.dp
+                    bottomPadding = if (index == products.size.minus(1)){
+                        16.dp
+                    }else{
+                        0.dp
                     }
+
+                    VerticalProduct(item, bottomPadding)
                 }
+                /*items(items = products!!) { product ->
+
+                }*/
             }
         }
     }
-
 }
 
 @Composable
@@ -257,34 +264,19 @@ fun CategoriesList(landingPageNewHome: LandingPageNewHome) {
 
 @Composable
 fun GridProduct(sectionDetails: LandingPageSectionDetails?) {
-    val manrope = FontFamily(Font(R.font.manrope_bold))
-    Text(
-        text = sectionDetails?.title.toString(),
-        style = TextStyle(
-            fontFamily = manrope,
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Bold
-        ),
-        color = colorResource(id = R.color.color_dark),
-        modifier = Modifier.padding(start = 16.dp)
-    )
     val products = sectionDetails?.products
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        contentPadding = PaddingValues(16.dp),
+        modifier = Modifier.height(250.dp),
+        contentPadding = PaddingValues(1.dp),
         content = {
             if (!products.isNullOrEmpty()) {
                 items(products.size ?: 1) { item ->
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(Color.Gray)
                     ) {
-                        Text(
-                            text = "Product",
-                            modifier = Modifier.align(Alignment.Center),
-                            color = Color.White
-                        )
+                        HorizontalProduct(products[item])
                     }
                 }
             }
@@ -293,25 +285,51 @@ fun GridProduct(sectionDetails: LandingPageSectionDetails?) {
 }
 
 @Composable
-fun VerticalProduct(product: Products?) {
-    Box(modifier = Modifier.padding(8.dp)) {
-        Row {
-            val painter = rememberAsyncImagePainter(model = product?.images)
-            Image(painter = painter, contentDescription = "")
-            Column {
-                Text(
-                    text = product?.title.toString(),
-                    modifier = Modifier.fillMaxSize(),
-                    fontSize = 14.sp,
-                    overflow = TextOverflow.Ellipsis,
-                    maxLines = 2,
-                    color = colorResource(id = R.color.black),
+fun VerticalProduct(product: Products?, bottomPadding: Dp) {
+    Box(
+        modifier = Modifier.padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = bottomPadding)
+    ) {
+        Card(
+            shape = RoundedCornerShape(16.dp),
+            elevation = 5.dp,
+            modifier = Modifier
+                .fillMaxWidth()
+        ) {
+            Row {
+                val painter = rememberAsyncImagePainter(model = product?.images)
+                Image(
+                    painter = painterResource(id = R.drawable.random_image),
+                    modifier = Modifier
+                        .height(100.dp)
+                        .width(100.dp),
+                    contentDescription = "",
+                    contentScale = ContentScale.FillBounds
                 )
-            }
+                Column {
+                    Text(
+                        text = product?.title.toString(),
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(8.dp),
+                        overflow = TextOverflow.Ellipsis,
+                        maxLines = 2,
+                        color = colorResource(id = R.color.black),
+                    )
 
+                    Text(
+                        text = stringResource(
+                            id = R.string.new_price,
+                            getPrice(product).toString()
+                        ),
+                        modifier = Modifier
+                            .wrapContentWidth()
+                            .padding(8.dp),
+                        color = colorResource(id = R.color.colorPrimary),
+                    )
+                }
+            }
         }
     }
-
 }
 
 @Composable
@@ -326,6 +344,14 @@ fun LoadImage(imageUrl: String) {
             .fillMaxWidth()
             .clip(RoundedCornerShape(8.dp))
     )
+}
+
+fun getPrice(product: Products?): Double {
+    return if (product?.unitPrice?.get(0)?.hasOffer == true) {
+        product.unitPrice?.get(0)?.newPrice ?: 0.0
+    } else {
+        product?.unitPrice?.get(0)?.sellingPrice ?: 0.0
+    }
 }
 
 @Preview

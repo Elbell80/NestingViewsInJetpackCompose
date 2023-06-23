@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SampleCodeLabJC</string>
+    <string name="new_price">NRS %s</string>
 </resources>
