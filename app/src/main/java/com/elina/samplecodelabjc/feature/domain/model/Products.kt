@@ -96,8 +96,6 @@ data class Products(
     var images: List<Images>? = null,
 
 
-
-
     /*  @SerializedName("brand")
       @Expose
       var brand: Brand? = null,*/

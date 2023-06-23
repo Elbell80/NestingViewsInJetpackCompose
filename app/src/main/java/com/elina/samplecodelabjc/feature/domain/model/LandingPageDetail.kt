@@ -33,7 +33,7 @@ class LandingPageDetail() : Parcelable {
     var endDate: String? = null
 
     @SerializedName("images")  
-    var images: String? = null
+    var bannerImage: String? = null
 
     @SerializedName("id")  
     var id: Int? = null
@@ -51,7 +51,7 @@ class LandingPageDetail() : Parcelable {
         itemId = parcel.readValue(Int::class.java.classLoader) as? Int
         startDate = parcel.readString()
         endDate = parcel.readString()
-        images = parcel.readString()
+        bannerImage = parcel.readString()
         id = parcel.readValue(Int::class.java.classLoader) as? Int
         position = parcel.readString()
     }
@@ -66,7 +66,7 @@ class LandingPageDetail() : Parcelable {
         parcel.writeValue(itemId)
         parcel.writeString(startDate)
         parcel.writeString(endDate)
-        parcel.writeString(images)
+        parcel.writeString(bannerImage)
         parcel.writeValue(id)
         parcel.writeString(position)
     }

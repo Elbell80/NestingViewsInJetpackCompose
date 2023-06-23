@@ -95,9 +95,7 @@ fun MyHomeItemsView(homeItemList: List<LandingPageNewHome>) {
 fun HorizontalView(bannersList: List<LandingPageDetail>) {
     LazyRow {
         items(items = bannersList) { banner ->
-            // LoadImage(banner.images ?: "")
-
-            Banner(bannerImage = banner.images ?: "")
+            Banner(bannerImage = banner.bannerImage ?: "")
         }
     }
 }
@@ -170,20 +168,16 @@ fun ProductCollection(sectionDetails: LandingPageSectionDetails?) {
             GridProduct(sectionDetails)
         }
         StringConstants.verticalType -> {
-            LazyColumn(modifier = Modifier.height(200.dp)) {
-                itemsIndexed(products!!){index, item ->
-                    var bottomPadding = 0.dp
-                    bottomPadding = if (index == products.size.minus(1)){
+            LazyColumn(modifier = Modifier.heightIn(200.dp, 700.dp)) {
+                itemsIndexed(products!!) { index, item ->
+                    val bottomPadding = if (index == products.size.minus(1)) {
                         16.dp
-                    }else{
+                    } else {
                         0.dp
                     }
 
                     VerticalProduct(item, bottomPadding)
                 }
-                /*items(items = products!!) { product ->
-
-                }*/
             }
         }
     }
@@ -191,7 +185,7 @@ fun ProductCollection(sectionDetails: LandingPageSectionDetails?) {
 
 @Composable
 fun Banner(bannerImage: String) {
-//    val painter: Painter = rememberAsyncImagePainter(bannerImage)
+    val painter = rememberAsyncImagePainter(bannerImage)
 //    Box(
 //        modifier = Modifier
 //            .fillMaxSize()
@@ -199,6 +193,7 @@ fun Banner(bannerImage: String) {
     //   LoadImage(imageUrl = bannerImage)
     Image(
         painter = painterResource(id = R.drawable.random_image),
+        //painter = painter,
         contentDescription = "Banner Image",
         modifier = Modifier
             .padding(8.dp)
@@ -267,7 +262,7 @@ fun GridProduct(sectionDetails: LandingPageSectionDetails?) {
     val products = sectionDetails?.products
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        modifier = Modifier.height(250.dp),
+        modifier = Modifier.heightIn(0.dp, 550.dp),
         contentPadding = PaddingValues(1.dp),
         content = {
             if (!products.isNullOrEmpty()) {
@@ -296,9 +291,9 @@ fun VerticalProduct(product: Products?, bottomPadding: Dp) {
                 .fillMaxWidth()
         ) {
             Row {
-                val painter = rememberAsyncImagePainter(model = product?.images)
+                val painter = rememberAsyncImagePainter(product?.images?.get(0)?.imageName)
                 Image(
-                    painter = painterResource(id = R.drawable.random_image),
+                    painter = painter,
                     modifier = Modifier
                         .height(100.dp)
                         .width(100.dp),
