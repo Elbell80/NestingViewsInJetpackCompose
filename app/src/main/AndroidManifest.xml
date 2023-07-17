@@ -15,7 +15,7 @@
         android:theme="@style/Theme.SampleCodeLabJC"
         tools:targetApi="31">
         <activity
-            android:name=".feature.presentation.main.MainActivity"
+            android:name=".ui.screen.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SampleCodeLabJC">
@@ -25,5 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.screen.details.DetailsActivity"/>
     </application>
 </manifest>

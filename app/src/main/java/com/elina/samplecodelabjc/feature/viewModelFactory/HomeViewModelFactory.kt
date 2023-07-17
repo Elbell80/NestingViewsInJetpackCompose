@@ -2,8 +2,8 @@ package com.elina.samplecodelabjc.feature.viewModelFactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.elina.samplecodelabjc.feature.presentation.home.HomeViewModel
-import com.elina.samplecodelabjc.feature.shared.repository.HomeRepository
+import com.elina.samplecodelabjc.ui.screen.home.HomeViewModel
+import com.elina.samplecodelabjc.domain.utils.repository.HomeRepository
 
 /**
  * Created by Elina on 31/05/2023.
