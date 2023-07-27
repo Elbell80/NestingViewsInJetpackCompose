@@ -21,7 +21,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -34,6 +33,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
 import com.elina.samplecodelabjc.ui.theme.SampleCodeLabJCTheme
 import com.elina.samplecodelabjc.utils.constants.StringConstants
@@ -102,7 +102,7 @@ fun HorizontalView(bannersList: List<LandingPageDetail>) {
 }
 
 @Composable
-fun HorizontalProduct(product: Products?, navController: NavHostController) {
+fun HorizontalProduct(product: Products?, navController: NavHostController? = null) {
     Box(
         modifier = Modifier
             .padding(8.dp)
@@ -194,12 +194,14 @@ fun ProductCollection(
 fun Banner(bannerImage: String) {
     // val painter = rememberAsyncImagePainter(bannerImage)
 
-    Image(
-        painter = painterResource(id = R.drawable.random_image),
+    AsyncImage(
+        //painter = painterResource(id = R.drawable.random_image),
+        model = bannerImage,
         //painter = painter,
         contentDescription = "Banner Image",
         modifier = Modifier
-            .width(10.dp)
+            .wrapContentWidth()
+            .height(200.dp)
             .padding(8.dp)
             .clip(RoundedCornerShape(8.dp))
     )
@@ -332,8 +334,8 @@ fun VerticalProduct(product: Products?, bottomPadding: Dp, navController: NavHos
 }
 
 
-fun GoToDetailsActivity(navController: NavHostController) {
-    navController.navigate(NavigationConstants.details)
+fun GoToDetailsActivity(navController: NavHostController?) {
+    navController?.navigate(NavigationConstants.details)
  //   val context = LocalContext.current
    // context.startActivity(Intent(context, DetailsActivity::class.java))
 

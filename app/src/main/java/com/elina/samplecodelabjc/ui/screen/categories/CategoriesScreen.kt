@@ -18,6 +18,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -33,6 +34,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.elina.samplecodelabjc.R
 import com.elina.samplecodelabjc.data.network.model.Categories
 import com.elina.samplecodelabjc.ui.theme.SampleCodeLabJCTheme
+import kotlinx.coroutines.flow.observeOn
 
 /**
  * Created by Elina on 12/07/2023.
@@ -42,10 +44,14 @@ import com.elina.samplecodelabjc.ui.theme.SampleCodeLabJCTheme
 fun CategoriesScreen(categoryViewModel: CategoriesViewModel = hiltViewModel()) {
     val isLoading = categoryViewModel.isLoading
 
-    val categoriesList = categoryViewModel.categoriesList
+    if (isLoading) {
+        Text(text = "Loading")
+    } else {
+        val categories = categoryViewModel.categoriesList.collectAsState()
 
-    CategoryScreen {
-        MyCategoryScreenView(categoriesList = categoriesList)
+        CategoryScreen {
+            MyCategoryScreenView(categoriesList = categories.value)
+        }
     }
 }
 

@@ -7,6 +7,7 @@ object ApiConstants {
     const val home = "home"
     const val categories = "categories"
     const val banner = "banner"
-    const val product = "product"
+    const val product = "products"
     const val type = "type"
+    const val offer = "offer"
 }

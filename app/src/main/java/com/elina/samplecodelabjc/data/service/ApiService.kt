@@ -34,12 +34,13 @@ interface ApiService {
     suspend fun getOfferBanner(
         @Header(ApiConstants.apiKey) apiKey: String? = "Q7qvOMJmaaftunz5T0Tz",
         @Header(ApiConstants.warehouseIdKey) warehouseId: Int = 1,
-        @Query(ApiConstants.type) type: String
+        @Query(ApiConstants.type) type: String = "offer"
     ): Response<BaseArrayListResponse<BannerHomeModel>>
 
     @GET(ApiConstants.product)
-    fun getAllProducts(
+    suspend fun getAllProducts(
         @Header(ApiConstants.apiKey) apiKey: String = "Q7qvOMJmaaftunz5T0Tz",
         @Header(ApiConstants.warehouseIdKey) warehouseId: Int,
-    ): Single<Response<BaseArrayListResponse<Products>>>
+        @Query(ApiConstants.offer) offer: Boolean = true
+    ): Response<BaseArrayListResponse<Products>>
 }

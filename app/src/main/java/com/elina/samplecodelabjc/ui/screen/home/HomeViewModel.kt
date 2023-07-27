@@ -11,7 +11,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.elina.samplecodelabjc.data.network.model.HomeResponse
 import com.elina.samplecodelabjc.data.network.model.LandingPageNewHome
-import com.elina.samplecodelabjc.domain.utils.repository.HomeRepository
+import com.elina.samplecodelabjc.domain.repository.HomeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.Observable
 import io.reactivex.Observer

@@ -5,5 +5,5 @@ package com.elina.samplecodelabjc.data.network.model
  */
 
 class BaseArrayListResponse<T> {
-    var data: T?= null
+    var data: List<T>?= null
 }

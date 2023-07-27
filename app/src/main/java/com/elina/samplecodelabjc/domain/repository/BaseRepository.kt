@@ -1,4 +1,4 @@
-package com.elina.samplecodelabjc.domain.utils.repository
+package com.elina.samplecodelabjc.domain.repository
 
 import com.elina.samplecodelabjc.data.service.RetrofitHelper
 import com.elina.samplecodelabjc.data.network.model.ErrorResponse

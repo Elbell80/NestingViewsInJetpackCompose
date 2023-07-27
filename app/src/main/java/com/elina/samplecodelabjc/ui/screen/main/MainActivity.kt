@@ -16,6 +16,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -33,6 +37,7 @@ import com.elina.samplecodelabjc.ui.screen.ContentScreens
 import com.elina.samplecodelabjc.ui.screen.CollapsingToolbarScreen
 import com.elina.samplecodelabjc.ui.NavigationItem
 import com.elina.samplecodelabjc.ui.screen.categories.CategoriesScreen
+import com.elina.samplecodelabjc.ui.screen.offer.OfferScreen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -157,23 +162,24 @@ fun BottomNavigationBar(navController: NavController) {
 fun Navigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = NavigationItem.Home.route) {
         composable(NavigationItem.Home.route) {
-           /* NavHost(navController = navController, startDestination = ""){
-                composable("details"){
-                    CollapsingToolbarScreen()
-                }
-            }*/
+            /* NavHost(navController = navController, startDestination = ""){
+                 composable("details"){
+                     CollapsingToolbarScreen()
+                 }
+             }*/
             HomeFragment(navController = navController)
         }
         composable(NavigationItem.Category.route) {
-           CategoriesScreen()
+            CategoriesScreen()
         }
         composable(NavigationItem.Offer.route) {
-            ContentScreens().OfferScreen()
+            OfferScreen()
         }
         composable(NavigationItem.More.route) {
             ContentScreens().MoreScreen()
         }
-        composable("details") { it
+        composable("details") {
+            it
             CollapsingToolbarScreen()
         }
     }

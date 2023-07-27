@@ -1,4 +1,4 @@
-package com.elina.samplecodelabjc.domain.utils.repository
+package com.elina.samplecodelabjc.domain.repository
 
 /**
  * Created by Elina on 31/05/2023.

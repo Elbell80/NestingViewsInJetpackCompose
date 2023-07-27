@@ -1,7 +1,8 @@
 package com.elina.samplecodelabjc.di
 
-import com.elina.samplecodelabjc.domain.utils.repository.CategoryRepository
-import com.elina.samplecodelabjc.domain.utils.repository.HomeRepository
+import com.elina.samplecodelabjc.domain.repository.CategoryRepository
+import com.elina.samplecodelabjc.domain.repository.HomeRepository
+import com.elina.samplecodelabjc.domain.repository.OfferRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,6 +19,9 @@ class AppModule {
     fun provideHomeRepository(): HomeRepository = HomeRepository()
 
     @Provides
-    fun provideCategoryRepository() : CategoryRepository = CategoryRepository()
+    fun provideCategoryRepository(): CategoryRepository = CategoryRepository()
+
+    @Provides
+    fun provideOfferRepository(): OfferRepository = OfferRepository()
 }
     
