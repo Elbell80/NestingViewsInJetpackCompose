@@ -16,12 +16,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -37,7 +32,10 @@ import com.elina.samplecodelabjc.ui.screen.ContentScreens
 import com.elina.samplecodelabjc.ui.screen.CollapsingToolbarScreen
 import com.elina.samplecodelabjc.ui.NavigationItem
 import com.elina.samplecodelabjc.ui.screen.categories.CategoriesScreen
+import com.elina.samplecodelabjc.ui.screen.more.MoreScreen
+import com.elina.samplecodelabjc.ui.screen.notification.NotificationScreen
 import com.elina.samplecodelabjc.ui.screen.offer.OfferScreen
+import com.elina.samplecodelabjc.utils.constants.NavigationConstants
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -58,24 +56,6 @@ fun ScreenWithTopAndBottomBar() {
     val showBottomBarState = rememberSaveable { (mutableStateOf(true)) }
     val showTopBarState = rememberSaveable { (mutableStateOf(true)) }
 
-    /*  Box {
-          NavHost(navController, startDestination = NavigationItem.Home.route) {
-            *//*  composable("main_navigation") {
-                Scaffold(
-                    topBar = { TopBar() },
-                    bottomBar = { BottomNavigationBar(navController) }
-                ) {  it
-                    NavHost(navController, startDestination = "home") {
-                        composable(NavigationItem.Home.route) { HomeFragment(navController = navController) }
-                        composable(NavigationItem.Category.route) { ContentScreens().CategoryScreen() }
-                        composable(NavigationItem.Offer.route) { ContentScreens().OfferScreen() }
-                        composable(NavigationItem.More.route) { ContentScreens().MoreScreen() }
-                    }
-                }
-            }*//*
-            composable("details") { CollapsingToolbarScreen() }
-        }
-    }*/
     Scaffold(
         topBar = {
             if (showTopBarState.value)
@@ -112,7 +92,7 @@ fun TopBar() {
                 fontSize = 18.sp
             )
         },
-        backgroundColor = colorResource(id = R.color.colorPrimary),
+        backgroundColor = colorResource(id = R.color.color_primary),
         contentColor = Color.White
     )
 }
@@ -126,7 +106,7 @@ fun BottomNavigationBar(navController: NavController) {
         NavigationItem.More,
     )
     BottomNavigation(
-        backgroundColor = colorResource(id = R.color.colorPrimary),
+        backgroundColor = colorResource(id = R.color.color_primary),
         contentColor = Color.White
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -176,11 +156,14 @@ fun Navigation(navController: NavHostController) {
             OfferScreen()
         }
         composable(NavigationItem.More.route) {
-            ContentScreens().MoreScreen()
+            MoreScreen(navController)
         }
         composable("details") {
             it
             CollapsingToolbarScreen()
+        }
+        composable(NavigationConstants.notifications){
+            NotificationScreen()
         }
     }
 }

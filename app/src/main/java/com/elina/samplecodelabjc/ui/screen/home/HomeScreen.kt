@@ -79,12 +79,15 @@ fun MyHomeItemsView(homeItemList: List<LandingPageNewHome>, navController: NavHo
                         HorizontalView(bannersList = bannersList)
                     }
                 }
+
                 StringConstants.productsCollection -> {
                     ProductCollection(item.sectionDetails, navController)
                 }
+
                 StringConstants.category -> {
                     CategoriesList(landingPageNewHome = item)
                 }
+
                 StringConstants.brandTags -> {}
                 else -> {}
             }
@@ -175,6 +178,7 @@ fun ProductCollection(
         StringConstants.gridType -> {
             GridProduct(sectionDetails, navController)
         }
+
         StringConstants.verticalType -> {
             LazyColumn(modifier = Modifier.heightIn(200.dp, 700.dp)) {
                 itemsIndexed(products!!) { index, item ->
@@ -325,7 +329,7 @@ fun VerticalProduct(product: Products?, bottomPadding: Dp, navController: NavHos
                         modifier = Modifier
                             .wrapContentWidth()
                             .padding(8.dp),
-                        color = colorResource(id = R.color.colorPrimary),
+                        color = colorResource(id = R.color.color_primary),
                     )
                 }
             }
@@ -336,8 +340,8 @@ fun VerticalProduct(product: Products?, bottomPadding: Dp, navController: NavHos
 
 fun GoToDetailsActivity(navController: NavHostController?) {
     navController?.navigate(NavigationConstants.details)
- //   val context = LocalContext.current
-   // context.startActivity(Intent(context, DetailsActivity::class.java))
+    //   val context = LocalContext.current
+    // context.startActivity(Intent(context, DetailsActivity::class.java))
 
 }
 
@@ -366,7 +370,7 @@ fun getPrice(product: Products?): Double {
 @Preview
 @Composable
 fun HorizontalPrev() {
-   // HorizontalProduct(product = Products())
+    // HorizontalProduct(product = Products())
 }
 
 

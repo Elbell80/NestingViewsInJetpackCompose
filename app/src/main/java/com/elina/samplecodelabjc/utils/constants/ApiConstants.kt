@@ -10,4 +10,5 @@ object ApiConstants {
     const val product = "products"
     const val type = "type"
     const val offer = "offer"
+    const val notifications = "notifications"
 }

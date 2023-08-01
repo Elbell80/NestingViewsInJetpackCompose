@@ -4,6 +4,7 @@ import com.elina.samplecodelabjc.data.network.model.BannerHomeModel
 import com.elina.samplecodelabjc.data.network.model.BaseArrayListResponse
 import com.elina.samplecodelabjc.data.network.model.CategoriesResponse
 import com.elina.samplecodelabjc.data.network.model.HomeResponse
+import com.elina.samplecodelabjc.data.network.model.NotificationResponse
 import com.elina.samplecodelabjc.data.network.model.Products
 import com.elina.samplecodelabjc.utils.constants.ApiConstants
 import io.reactivex.Observable
@@ -43,4 +44,10 @@ interface ApiService {
         @Header(ApiConstants.warehouseIdKey) warehouseId: Int,
         @Query(ApiConstants.offer) offer: Boolean = true
     ): Response<BaseArrayListResponse<Products>>
+
+    @GET(ApiConstants.notifications)
+    suspend fun getNotifications(
+        @Header(ApiConstants.apiKey) apiKey: String = "Q7qvOMJmaaftunz5T0Tz",
+        @Header(ApiConstants.warehouseIdKey) warehouseId: Int
+    ): Response<BaseArrayListResponse<NotificationResponse>>
 }
