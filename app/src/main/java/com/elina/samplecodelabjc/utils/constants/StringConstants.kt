@@ -12,4 +12,6 @@ object StringConstants {
     const val gridType = "grid"
     const val horizontalType = "horizontal"
     const val verticalType = "vertical"
+    const val date = "date"
+    const val notifBody = "notifBody"
 }
