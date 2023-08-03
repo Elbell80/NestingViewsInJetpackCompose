@@ -69,7 +69,6 @@ fun NotificationDate(date: String?) {
             .fillMaxWidth()
             .wrapContentHeight()
             .background(color = colorResource(id = R.color.divider_color))
-            .padding(16.dp)
     ) {
         Row(
             modifier = Modifier
@@ -81,8 +80,10 @@ fun NotificationDate(date: String?) {
                 modifier = Modifier
                     .wrapContentHeight()
                     .wrapContentWidth()
+                    .padding(start = 16.dp)
                     .align(Alignment.CenterVertically),
                 color = Color.Black,
+                fontSize = 18.sp,
                 style = MaterialTheme.typography.h6
             )
             Spacer(modifier = Modifier.width(16.dp))
@@ -91,16 +92,18 @@ fun NotificationDate(date: String?) {
                     text = month.toString(),
                     modifier = Modifier
                         .wrapContentHeight()
+                        .padding(top = 16.dp)
                         .fillMaxWidth(),
-                    fontSize = 16.sp,
+                    fontSize = 18.sp,
                     color = Color.DarkGray
                 )
                 Text(
                     text = year.toString(),
                     modifier = Modifier
                         .wrapContentHeight()
+                        .padding(bottom = 16.dp)
                         .fillMaxWidth(),
-                    fontSize = 16.sp,
+                    fontSize = 18.sp,
                     color = Color.DarkGray
                 )
             }
@@ -114,27 +117,28 @@ fun NotificationBody(notification: NotificationResponse?) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
+            .background(Color.White)
             .wrapContentHeight()
-            .padding(20.dp)
     ) {
         Text(
             text = notification?.title.toString(),
             modifier = Modifier
                 .fillMaxWidth()
+                .padding(start = 16.dp, end = 16.dp, top = 16.dp)
                 .wrapContentHeight(),
             style = MaterialTheme.typography.h6,
             color = Color.Black
         )
-        Spacer(modifier = Modifier.height(16.dp))
         Text(
             text = notification?.title.toString(),
             modifier = Modifier
                 .fillMaxWidth()
-                .wrapContentHeight(),
+                .wrapContentHeight()
+                .padding(16.dp),
             color = Color.DarkGray
         )
         Divider(
-            modifier = Modifier.height(16.dp),
+            modifier = Modifier.height(8.dp),
             color = colorResource(id = R.color.divider_color)
         )
     }
@@ -143,5 +147,11 @@ fun NotificationBody(notification: NotificationResponse?) {
 @Composable
 @Preview
 fun ShowPreview() {
-    NotificationDate(date = "2023 May 24")
+    NotificationDate(date = "2034 May 14")
+    /* NotificationBody(
+         notification = NotificationResponse(
+             title = "test test",
+             message = "tet test test test"
+         )
+     )*/
 }

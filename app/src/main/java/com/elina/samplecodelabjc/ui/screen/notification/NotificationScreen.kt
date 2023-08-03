@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
@@ -25,7 +26,7 @@ fun NotificationScreen() {
     var tabIndex = MutableStateFlow<Int>(0)
     //by remember { mutableStateOf(0) }
 
-    val tabs = listOf("Home", "About", "Settings")
+    val tabs = listOf("General", "Product")
 
     Column(modifier = Modifier.fillMaxWidth()) {
         TabRow(selectedTabIndex = tabIndex.collectAsState().value) {
@@ -41,7 +42,6 @@ fun NotificationScreen() {
                             )
 
                             1 -> Icon(imageVector = Icons.Default.Info, contentDescription = null)
-                            //     2 -> Icon(imageVector = Icons.Default.Settings, contentDescription = null)
                         }
                     }
                 )

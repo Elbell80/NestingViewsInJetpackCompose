@@ -121,7 +121,7 @@ fun HorizontalProduct(product: Products?, navController: NavHostController? = nu
                 modifier = Modifier
                     .align(Alignment.TopStart)
                     .clickable {
-                        GoToDetailsActivity(navController)
+                        GoToDetailsActivity(navController, product)
                     }
             ) {
                 val painter = rememberAsyncImagePainter(product?.images?.get(0)?.imageName)
@@ -299,7 +299,7 @@ fun VerticalProduct(product: Products?, bottomPadding: Dp, navController: NavHos
                 .fillMaxWidth()
         ) {
             Row(modifier = Modifier.clickable {
-                GoToDetailsActivity(navController)
+                GoToDetailsActivity(navController, product)
             }) {
                 val painter = rememberAsyncImagePainter(product?.images?.get(0)?.imageName)
                 Image(
@@ -338,8 +338,8 @@ fun VerticalProduct(product: Products?, bottomPadding: Dp, navController: NavHos
 }
 
 
-fun GoToDetailsActivity(navController: NavHostController?) {
-    navController?.navigate(NavigationConstants.details)
+fun GoToDetailsActivity(navController: NavHostController?, product: Products?) {
+    navController?.navigate("details/$product")
     //   val context = LocalContext.current
     // context.startActivity(Intent(context, DetailsActivity::class.java))
 

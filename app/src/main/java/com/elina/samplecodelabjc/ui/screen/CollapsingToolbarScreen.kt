@@ -2,6 +2,7 @@ package com.elina.samplecodelabjc.ui.screen
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -21,6 +22,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
+import com.elina.samplecodelabjc.data.network.model.Products
 import com.elina.samplecodelabjc.utils.constants.Constants.COLLAPSED_TOP_BAR_HEIGHT
 import com.elina.samplecodelabjc.utils.constants.Constants.EXPANDED_TOP_BAR_HEIGHT
 
@@ -29,8 +34,8 @@ import com.elina.samplecodelabjc.utils.constants.Constants.EXPANDED_TOP_BAR_HEIG
  */
 
 @Composable
-fun CollapsingToolbarScreen() {
-    ScaffoldLibrary(DEFAULT_BOOKS)
+fun CollapsingToolbarScreen(products: Products) {
+    ProductDetails(products)
 }
 
 @Composable
@@ -45,6 +50,43 @@ fun Books(modifier: Modifier = Modifier, model: BookModel) =
         }
     }
 
+@Composable
+fun ProductDetails(products: Products) {
+    val listState = rememberLazyListState()
+    val isCollapsed: Boolean by remember {
+        derivedStateOf { listState.firstVisibleItemIndex > 0 }
+    }
+    Scaffold(
+        topBar = { CollapsedTopBar(isCollapsed = isCollapsed, products = products) },
+        bottomBar = {}
+    ) { padding ->
+        LazyColumn(
+            modifier = Modifier.padding(padding),
+            state = listState
+        ) {
+            item { ExpandedTopBar(products = products) }
+            item {
+                Text(
+                    text = products.description.toString(),
+                    fontSize = 16.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 16.dp, end = 16.dp, top = 16.dp)
+                )
+            }
+            item {
+                Text(
+                    text = products.description.toString(),
+                    fontSize = 16.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 16.dp, end = 16.dp, top = 16.dp)
+                )
+            }
+        }
+    }
+}
+/*
 @Composable
 fun ScaffoldLibrary(books: List<BookModel> = DEFAULT_BOOKS) {
     val listState = rememberLazyListState()
@@ -66,10 +108,10 @@ fun ScaffoldLibrary(books: List<BookModel> = DEFAULT_BOOKS) {
             }
         }
     }
-}
+}*/
 
 @Composable
- fun CollapsedTopBar(modifier: Modifier = Modifier, isCollapsed: Boolean) {
+fun CollapsedTopBar(modifier: Modifier = Modifier, isCollapsed: Boolean, products: Products) {
     val color: Color by animateColorAsState(
         if (isCollapsed) MaterialTheme.colors.background
         else MaterialTheme.colors.primaryVariant
@@ -83,13 +125,13 @@ fun ScaffoldLibrary(books: List<BookModel> = DEFAULT_BOOKS) {
         contentAlignment = Alignment.BottomStart
     ) {
         AnimatedVisibility(visible = isCollapsed) {
-            Text(text = "Library", style = MaterialTheme.typography.h6)
+            Text(text = products.title.toString(), style = MaterialTheme.typography.h6)
         }
     }
 }
 
 @Composable
-private fun ExpandedTopBar() {
+private fun ExpandedTopBar(products: Products) {
     Box(
         modifier = Modifier
             .background(MaterialTheme.colors.primaryVariant)
@@ -97,6 +139,7 @@ private fun ExpandedTopBar() {
             .height(EXPANDED_TOP_BAR_HEIGHT - COLLAPSED_TOP_BAR_HEIGHT),
         contentAlignment = Alignment.BottomStart
     ) {
+        AsyncImage(model = products.images?.get(0)?.imageName, contentDescription = "product image")
         Text(
             modifier = Modifier.padding(16.dp),
             text = "Library",
@@ -105,3 +148,11 @@ private fun ExpandedTopBar() {
         )
     }
 }
+
+
+@Composable
+@Preview
+fun DefaultPreview() {
+    //CollapsingToolbarScreen()
+}
+

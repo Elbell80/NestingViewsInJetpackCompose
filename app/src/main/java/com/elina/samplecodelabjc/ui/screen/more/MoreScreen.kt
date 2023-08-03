@@ -1,5 +1,6 @@
 package com.elina.samplecodelabjc.ui.screen.more
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,6 +18,7 @@ import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -24,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.elina.samplecodelabjc.R
+import com.elina.samplecodelabjc.ui.screen.NotificationActivity
 import com.elina.samplecodelabjc.ui.screen.notification.NotificationScreen
 import com.elina.samplecodelabjc.utils.constants.NavigationConstants
 
@@ -37,6 +40,7 @@ fun MoreScreen(navController: NavHostController) {
     ) {
         MoreItems(title = "Notifications", R.drawable.ic_notifications) {
             navController.navigate(NavigationConstants.notifications)
+            //  goToNotif()
         }
         Divider(
             modifier = Modifier
@@ -46,7 +50,7 @@ fun MoreScreen(navController: NavHostController) {
             color = colorResource(id = R.color.divider_color)
         )
         MoreItems(title = "Rate Us", R.drawable.ic_notifications) {
-         //    GoToOtherPage()
+            //    GoToOtherPage()
         }
         Divider(
             modifier = Modifier
@@ -94,4 +98,9 @@ fun MoreItems(title: String, icon: Int, goToOtherPage: () -> Unit) {
             fontSize = 16.sp
         )
     }
+}
+
+@Composable
+fun goToNotif() {
+    //  Intent(LocalContext.current, NotificationActivity::class.java)
 }

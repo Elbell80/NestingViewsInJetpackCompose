@@ -9,6 +9,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -28,6 +30,7 @@ import com.elina.samplecodelabjc.ui.screen.home.HomeFragment
 import com.elina.samplecodelabjc.ui.theme.SampleCodeLabJCTheme
 import dagger.hilt.android.AndroidEntryPoint
 import com.elina.samplecodelabjc.R
+import com.elina.samplecodelabjc.data.network.model.Products
 import com.elina.samplecodelabjc.ui.screen.ContentScreens
 import com.elina.samplecodelabjc.ui.screen.CollapsingToolbarScreen
 import com.elina.samplecodelabjc.ui.NavigationItem
@@ -71,11 +74,6 @@ fun ScreenWithTopAndBottomBar() {
             }
         }
     )
-}
-
-@Composable
-fun ScreenWithOutTopAndBottomBar(content: @Composable () -> Unit) {
-    content()
 }
 
 @Composable
@@ -133,6 +131,17 @@ fun BottomNavigationBar(navController: NavController) {
                 selected = currentRoute == item.route,
                 onClick = {
                     navController.navigate(item.route)
+                    /*  // Pop up to the start destination of the graph to
+                      // avoid building up a large stack of destinations
+                      // on the back stack as users select items
+                      popUpTo(navController.graph.findStartDestination().id) {
+                          saveState = true
+                      }
+                      // Avoid multiple copies of the same destination when
+                      // reselecting the same item
+                      launchSingleTop = true
+                      // Restore state when reselecting a previously selected item
+                      restoreState = true*/
                 })
         }
     }
@@ -159,10 +168,13 @@ fun Navigation(navController: NavHostController) {
             MoreScreen(navController)
         }
         composable("details") {
-            it
-            CollapsingToolbarScreen()
+            //  val data = remember {
+            val navBackStackEntry = navController.currentBackStackEntryAsState()
+            val product = navBackStackEntry.value?.arguments?.getParcelable("product") ?: Products()
+            //  }
+            CollapsingToolbarScreen(product)
         }
-        composable(NavigationConstants.notifications){
+        composable(NavigationConstants.notifications) {
             NotificationScreen()
         }
     }
@@ -176,7 +188,6 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    LocalContext.current
     SampleCodeLabJCTheme {
         Greeting("Android")
     }

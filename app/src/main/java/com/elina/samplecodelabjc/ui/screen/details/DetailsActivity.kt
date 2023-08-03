@@ -15,7 +15,7 @@ class DetailsActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SampleCodeLabJCTheme {
-                CollapsingToolbarScreen()
+               // CollapsingToolbarScreen()
             }
         }
     }
