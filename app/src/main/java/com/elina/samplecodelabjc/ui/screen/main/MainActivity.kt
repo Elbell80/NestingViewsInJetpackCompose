@@ -22,10 +22,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.elina.samplecodelabjc.ui.screen.home.HomeFragment
 import com.elina.samplecodelabjc.ui.theme.SampleCodeLabJCTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -167,11 +169,14 @@ fun Navigation(navController: NavHostController) {
         composable(NavigationItem.More.route) {
             MoreScreen(navController)
         }
-        composable("details") {
-            //  val data = remember {
-            val navBackStackEntry = navController.currentBackStackEntryAsState()
-            val product = navBackStackEntry.value?.arguments?.getParcelable("product") ?: Products()
-            //  }
+        composable(
+            "details/{product}",
+            //    arguments = listOf(navArgument("product") { type = NavType.ParcelableType(Products::class.java) })
+            arguments = listOf(navArgument("product") { type = NavType.StringType })
+        ) { backStackEntry ->
+            // val product = backStackEntry.arguments?.getParcelable<Products>("product")
+            val product = backStackEntry.arguments?.getString("product")
+
             CollapsingToolbarScreen(product)
         }
         composable(NavigationConstants.notifications) {

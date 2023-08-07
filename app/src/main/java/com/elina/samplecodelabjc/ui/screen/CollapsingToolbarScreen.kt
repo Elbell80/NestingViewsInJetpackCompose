@@ -34,8 +34,8 @@ import com.elina.samplecodelabjc.utils.constants.Constants.EXPANDED_TOP_BAR_HEIG
  */
 
 @Composable
-fun CollapsingToolbarScreen(products: Products) {
-    ProductDetails(products)
+fun CollapsingToolbarScreen(products: String?) {
+    //ProductDetails(products)
 }
 
 @Composable
@@ -51,7 +51,7 @@ fun Books(modifier: Modifier = Modifier, model: BookModel) =
     }
 
 @Composable
-fun ProductDetails(products: Products) {
+fun ProductDetails(products: Products?) {
     val listState = rememberLazyListState()
     val isCollapsed: Boolean by remember {
         derivedStateOf { listState.firstVisibleItemIndex > 0 }
@@ -67,7 +67,7 @@ fun ProductDetails(products: Products) {
             item { ExpandedTopBar(products = products) }
             item {
                 Text(
-                    text = products.description.toString(),
+                    text = products?.description.toString(),
                     fontSize = 16.sp,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -76,7 +76,7 @@ fun ProductDetails(products: Products) {
             }
             item {
                 Text(
-                    text = products.description.toString(),
+                    text = products?.description.toString(),
                     fontSize = 16.sp,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -86,6 +86,7 @@ fun ProductDetails(products: Products) {
         }
     }
 }
+
 /*
 @Composable
 fun ScaffoldLibrary(books: List<BookModel> = DEFAULT_BOOKS) {
@@ -111,7 +112,7 @@ fun ScaffoldLibrary(books: List<BookModel> = DEFAULT_BOOKS) {
 }*/
 
 @Composable
-fun CollapsedTopBar(modifier: Modifier = Modifier, isCollapsed: Boolean, products: Products) {
+fun CollapsedTopBar(modifier: Modifier = Modifier, isCollapsed: Boolean, products: Products?) {
     val color: Color by animateColorAsState(
         if (isCollapsed) MaterialTheme.colors.background
         else MaterialTheme.colors.primaryVariant
@@ -125,13 +126,13 @@ fun CollapsedTopBar(modifier: Modifier = Modifier, isCollapsed: Boolean, product
         contentAlignment = Alignment.BottomStart
     ) {
         AnimatedVisibility(visible = isCollapsed) {
-            Text(text = products.title.toString(), style = MaterialTheme.typography.h6)
+            Text(text = products?.title.toString(), style = MaterialTheme.typography.h6)
         }
     }
 }
 
 @Composable
-private fun ExpandedTopBar(products: Products) {
+private fun ExpandedTopBar(products: Products?) {
     Box(
         modifier = Modifier
             .background(MaterialTheme.colors.primaryVariant)
@@ -139,7 +140,7 @@ private fun ExpandedTopBar(products: Products) {
             .height(EXPANDED_TOP_BAR_HEIGHT - COLLAPSED_TOP_BAR_HEIGHT),
         contentAlignment = Alignment.BottomStart
     ) {
-        AsyncImage(model = products.images?.get(0)?.imageName, contentDescription = "product image")
+        AsyncImage(model = products?.images?.get(0)?.imageName, contentDescription = "product image")
         Text(
             modifier = Modifier.padding(16.dp),
             text = "Library",

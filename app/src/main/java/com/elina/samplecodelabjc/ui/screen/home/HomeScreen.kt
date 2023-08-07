@@ -339,10 +339,7 @@ fun VerticalProduct(product: Products?, bottomPadding: Dp, navController: NavHos
 
 
 fun GoToDetailsActivity(navController: NavHostController?, product: Products?) {
-    navController?.navigate("details/$product")
-    //   val context = LocalContext.current
-    // context.startActivity(Intent(context, DetailsActivity::class.java))
-
+    navController?.navigate("details")
 }
 
 @Composable
