@@ -140,7 +140,10 @@ private fun ExpandedTopBar(products: Products?) {
             .height(EXPANDED_TOP_BAR_HEIGHT - COLLAPSED_TOP_BAR_HEIGHT),
         contentAlignment = Alignment.BottomStart
     ) {
-        AsyncImage(model = products?.images?.get(0)?.imageName, contentDescription = "product image")
+        AsyncImage(
+            model = products?.images?.get(0)?.imageName,
+            contentDescription = "product image"
+        )
         Text(
             modifier = Modifier.padding(16.dp),
             text = "Library",

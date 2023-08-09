@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -70,26 +71,28 @@ fun MYyHomeScreen(content: @Composable () -> Unit) {
 
 @Composable
 fun MyHomeItemsView(homeItemList: List<LandingPageNewHome>, navController: NavHostController) {
-    LazyColumn {
-        items(items = homeItemList) { item ->
-            when (item.title) {
-                StringConstants.banner -> {
-                    val bannersList = item.details
-                    if (bannersList != null) {
-                        HorizontalView(bannersList = bannersList)
+    Box(modifier = Modifier.fillMaxSize()) {
+        LazyColumn {
+            items(items = homeItemList) { item ->
+                when (item.title) {
+                    StringConstants.banner -> {
+                        val bannersList = item.details
+                        if (bannersList != null) {
+                            HorizontalView(bannersList = bannersList)
+                        }
                     }
-                }
 
-                StringConstants.productsCollection -> {
-                    ProductCollection(item.sectionDetails, navController)
-                }
+                    StringConstants.productsCollection -> {
+                        ProductCollection(item.sectionDetails, navController)
+                    }
 
-                StringConstants.category -> {
-                    CategoriesList(landingPageNewHome = item)
-                }
+                    StringConstants.category -> {
+                        CategoriesList(landingPageNewHome = item)
+                    }
 
-                StringConstants.brandTags -> {}
-                else -> {}
+                    StringConstants.brandTags -> {}
+                    else -> {}
+                }
             }
         }
     }
@@ -180,14 +183,20 @@ fun ProductCollection(
         }
 
         StringConstants.verticalType -> {
-            LazyColumn(modifier = Modifier.heightIn(200.dp, 700.dp)) {
-                itemsIndexed(products!!) { index, item ->
-                    val bottomPadding = if (index == products.size.minus(1)) {
-                        16.dp
-                    } else {
-                        0.dp
+            Box(modifier = Modifier.fillMaxSize()) {
+                LazyColumn(
+                    modifier = Modifier
+                        //.height(600.dp)
+                         .heightIn(200.dp, 1000.dp)
+                ) {
+                    itemsIndexed(products!!) { index, item ->
+                        val bottomPadding = if (index == products.size.minus(1)) {
+                            16.dp
+                        } else {
+                            0.dp
+                        }
+                        VerticalProduct(item, bottomPadding, navController)
                     }
-                    VerticalProduct(item, bottomPadding, navController)
                 }
             }
         }
@@ -270,11 +279,15 @@ fun GridProduct(sectionDetails: LandingPageSectionDetails?, navController: NavHo
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         modifier = Modifier
-            .heightIn(0.dp, 550.dp),
+            .wrapContentHeight()
+            .heightIn(0.dp, 1000.dp),
+        //   .verticalScroll(rememberScrollState()),
+
+        //.nestedScroll(true),
         contentPadding = PaddingValues(1.dp),
         content = {
             if (!products.isNullOrEmpty()) {
-                items(products.size ?: 1) { item ->
+                items(10) { item ->
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
@@ -339,7 +352,7 @@ fun VerticalProduct(product: Products?, bottomPadding: Dp, navController: NavHos
 
 
 fun GoToDetailsActivity(navController: NavHostController?, product: Products?) {
-    navController?.navigate("details")
+//    navController?.navigate("details")
 }
 
 @Composable

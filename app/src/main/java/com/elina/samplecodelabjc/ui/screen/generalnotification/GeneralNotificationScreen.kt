@@ -9,10 +9,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -38,19 +39,15 @@ fun GeneralNotificationScreen(notificationsViewModel: GeneralNotificationViewMod
     if (isLoading)
         Text(text = "Notifications Loading")
 
-    Column(
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        if (notifications.value.isNotEmpty()) {
-            for (i in notifications.value.indices) {
-                when (notifications.value[i].type) {
-                    StringConstants.date -> {
-                        NotificationDate(notifications.value[i].date)
-                    }
+    LazyColumn(modifier = Modifier.fillMaxWidth()) {
+        items(notifications.value) { notif ->
+            when (notif.type) {
+                StringConstants.date -> {
+                    NotificationDate(notif.date)
+                }
 
-                    StringConstants.notifBody -> {
-                        NotificationBody(notifications.value[i].notification)
-                    }
+                StringConstants.notifBody -> {
+                    NotificationBody(notif.notification)
                 }
             }
         }

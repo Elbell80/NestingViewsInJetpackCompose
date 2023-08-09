@@ -18,6 +18,8 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -88,17 +90,16 @@ fun MyCategoryScreenView(categoriesList: List<Categories>) {
 fun Category(category: Categories) {
     Box(
         modifier = Modifier
-            .fillMaxWidth()
-            //.background(color = colorResource(id = R.color.purple_200))
             .padding(10.dp)
+            .fillMaxWidth()
     ) {
         Box(
             modifier = Modifier
                 .width(140.dp)
                 .height(140.dp)
-                .background(color = colorResource(id = R.color.color_primary_light))
                 .align(BiasAlignment(horizontalBias = 1f, verticalBias = 0f))
                 .clip(RoundedCornerShape(28.dp))
+                .background(color = colorResource(id = R.color.color_primary_light))
                 .border(
                     width = 1.dp,
                     color = colorResource(id = R.color.divider_color),
@@ -109,9 +110,11 @@ fun Category(category: Categories) {
             modifier = Modifier
                 .wrapContentWidth()
                 .height(120.dp)
+                .clip(RoundedCornerShape(15.dp))
                 .background(color = colorResource(id = R.color.white))
                 .align(BiasAlignment(horizontalBias = -1f, verticalBias = 0f))
                 .padding(end = 30.dp)
+
         ) {
             Column(
                 modifier = Modifier
@@ -148,7 +151,6 @@ fun Category(category: Categories) {
                 )
             }
         }
-
         AsyncImage(
             model = category.icon, contentDescription = "category Image",
             modifier = Modifier
